@@ -1,0 +1,18 @@
+CREATE TABLE short_link (
+  id BIGSERIAL PRIMARY KEY,
+  original_url TEXT NOT NULL,
+  code VARCHAR(20) NOT NULL UNIQUE,
+  expires_at TIMESTAMP NULL,
+  click_count BIGINT NOT NULL DEFAULT 0,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE click_event (
+  id BIGSERIAL PRIMARY KEY,
+  link_id BIGINT NOT NULL REFERENCES short_link(id) ON DELETE CASCADE,
+  clicked_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  ip_address VARCHAR(80),
+  user_agent VARCHAR(300)
+);
+
+CREATE INDEX idx_click_link_id ON click_event(link_id);

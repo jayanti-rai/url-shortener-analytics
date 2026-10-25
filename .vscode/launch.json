@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch URL Shortener App",
+            "request": "launch",
+            "mainClass": "com.jayantirai.urlshortener.UrlShortenerAnalyticsApplication",
+            "projectName": "url-shortener-analytics",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false
+        }
+    ]
+}
