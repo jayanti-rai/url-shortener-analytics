@@ -15,3 +15,4 @@ Production-ready **Spring Boot 3** project implementing a URL shortener with cli
 ## Run
 ```bash
 docker compose up --build
+```
